@@ -1,13 +1,14 @@
 import React from 'react'
-import TopHeader from '../components/header/TopHeader'
-import Footer from '../components/header/Footer'
+import "../assets/css/defaults.css"
+import TopHeader from '../components/Header/TopHeader'
+import Footer from '../components/Footer/Footer'
 
 const Layout = ({children}) => {
   return (
     <>
-    <TopHeader/>
+ <TopHeader/>
     {children}
-   
+   <Footer/>
     </>
   )
 }

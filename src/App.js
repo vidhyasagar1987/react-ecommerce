@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import "./assets/css/defaults.css"
 import Learning from "./pages/Learning";
 
 import Products from "./pages/Products";
