@@ -1,16 +1,17 @@
-import React from 'react'
-import "../assets/css/defaults.css"
-import TopHeader from '../components/Header/TopHeader'
-import Footer from '../components/Footer/Footer'
+import React from "react";
+import "../assets/css/defaults.css";
 
-const Layout = ({children}) => {
+import Footer from "../components/Footer/Footer";
+import TopHeader from "../components/header/TopHeader";
+
+const Layout = ({ children }) => {
   return (
     <>
- <TopHeader/>
-    {children}
-   <Footer/>
+      <TopHeader />
+      {children}
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
