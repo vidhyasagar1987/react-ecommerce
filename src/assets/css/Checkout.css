@@ -1,0 +1,24 @@
+.checkout-container {
+  display: flex;
+  gap: 20px;
+}
+
+.checkoutForm {
+  width: 50%;
+  background-color: azure;
+  padding: 15px;
+}
+.checkoutForm div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.checkoutForm div label{ width: 20%}
+
+.checkoutForm input{
+    border-radius: 5px;
+    padding: 5px;
+    height: 25px;
+    border: 1px solid #ccc;
+}

@@ -11,23 +11,24 @@ const Products = () => {
   const { products, error, productsLoading } = useSelector(
     (state) => state.products
   );
-  console.log(error, products);
 
   useEffect(() => {
     dispatch(getProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Layout>
-    <Grid container spacing={2}>
-      {error
-        ? error
-        : productsLoading
-        ? "Loading"
-        : products && products.length > 0
-        ? products.map((p) => <ProductsList key={p.id} product={p} />)
-        : "No Products Found"}
-    </Grid>
+      <div className="container">
+      <Grid container spacing={2}>
+        {error
+          ? error
+          : productsLoading
+          ? "Loading"
+          : products && products.length > 0
+          ? products.map((p) => <ProductsList key={p.id} product={p} />)
+          : "No Products Found"}
+      </Grid>
+      </div>
     </Layout>
   );
 };

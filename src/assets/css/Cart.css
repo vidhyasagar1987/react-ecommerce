@@ -1,0 +1,34 @@
+.cartPoduct{
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:#eee ;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartPoduct h2{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.cart-content {
+    display: flex; 
+    gap: 20px;
+}
+.cart-content img{
+    width: 200px;
+}
+
+.cart-des{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cart-des h2, h3, h4{
+    font-weight: 400;
+}
