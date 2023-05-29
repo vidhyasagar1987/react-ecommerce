@@ -9,6 +9,7 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
 import ProductDetail from "./pages/ProductDetail";
+import WishList from "./pages/WishList";
 
 function App() {
   return (
@@ -16,11 +17,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail/>}/>
+        <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/users" element={<Users />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/wishlist" element={<WishList/>}/>
       </Routes>
       {/* <Users/>
       <Products /> */}

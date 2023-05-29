@@ -1,110 +1,151 @@
 /* Header styles */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   background-color: transparent;
-  padding: 20px;
+  z-index: 999;
+  width: 100%;
+  padding: 20px 0px;
+  transition: background-color 0.7s ease-in-out; 
+}
+
+.header-container {
+  padding: 0 80px;
   display: flex;
   align-items: center;
-  z-index: 999;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.logo {
+  margin-top: 5px;
+}
+.header-right-wrap {
+  margin-top: 15px;
+}
+
+.main-menu nav ul {
+  display: block;
+  text-align: center;
+}
+
+.main-menu nav ul li {
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
+}
+
+.main-menu nav ul li > a {
+  color: #555252;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+}
+
+.header-right-wrap ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.wishList,
+.mobile-menu {
+  margin-left: 25px;
+}
+.wishList,
+.cart {
+  position: relative;
+}
+.wishList > a,
+.cart > a {
+  background: transparent;
+  border: none;
+  color: #000;
+  display: inline-block;
+  font-size: 24px;
+  padding: 0;
+  position: relative;
+}
+
+.cart > a span.count-style,
+.wishList > a span.count-style {
+  background-color: #000;
+  border-radius: 100%;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  height: 21px;
+  line-height: 21px;
+  position: absolute;
+  right: -14px;
+  text-align: center;
+  top: -9px;
+  width: 21px;
+}
+.mobile-menu {
+  display: none;
+}
+.mobile-menu button {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 33px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logo img {
+  height: 40px; /* Adjust the height as needed */
+}
+.header.scrolled {
+  background-color: #fff; /* New background color on scroll */
+}
+
+/* Responsive styles */
+
+@media (max-width: 992px) {
+  .header {
+    position: relative;
+  }
+  .mobile-menu{ display: flex;}
+  .header-container {
+    padding: 0 20px;
+    position: relative;
   }
   
-  .logo {
-    margin-right: auto;
-  }
-  
-  .logo img {
-    height: 40px; /* Adjust the height as needed */
-  }
-  
-  .menu-toggle {
-    display: none;
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-  .hamburger-icon {
+  .main-menu nav ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
+    width: 40%;
+    
+    height: 100vh;
+    overflow: auto;
+    position: absolute;
+    top: 72px;
+    right: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    justify-content: flex-start;
+    padding: 40px 35px 0;
   }
-  
-  .hamburger-icon span {
-    display: block;
+  .active nav ul {
+    background: #242222;
+    right: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .main-menu nav ul li a {
+    text-align: left;
+    padding-bottom: 2rem;
     width: 100%;
-    height: 3px;
-    background-color: #333;
-    transition: background-color 0.3s ease;
+    display: table;
+    color: #fff;
   }
-  
-  .menu {
-    display: flex;
+
+  .main-menu nav ul li a:hover {
+    background-color: #1888ff;
+    border-radius: 0;
   }
-  
-  .menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .menu li {
-    margin-left: 10px;
-  }
-  
-  .menu li a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .logo {
-      margin: 0 auto 10px;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #f4f4f4;
-      padding: 10px 0;
-    }
-  
-    .menu-open .menu {
-      display: flex;
-    }
-  
-    .menu li {
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
-  }
-  
-  /* Hamburger icon animation */
-  .menu-toggle:hover .hamburger-icon span {
-    background-color: #777;
-  }
-  
-  /* .menu-toggle .hamburger-icon span:first-child {
-    transform: translateY(${props => (props.menuOpen ? '8px' : '0')}) rotate(${props => (props.menuOpen ? '45deg' : '0')});
-  }
-  
-  .menu-toggle .hamburger-icon span:nth-child(2) {
-    opacity: ${props => (props.menuOpen ? '0' : '1')};
-  }
-  
-  .menu-toggle .hamburger-icon span:last-child {
-    transform: translateY(${props => (props.menuOpen ? '-8px' : '0')}) rotate(${props => (props.menuOpen ? '-45deg' : '0')});
-  } */
+}

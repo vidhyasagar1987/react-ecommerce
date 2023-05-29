@@ -22,7 +22,11 @@ ol {
   margin: 0;
   padding: 0;
 }
-
+ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
 body {
   font-size: 16px;
   line-height: 1.5;
@@ -65,10 +69,6 @@ a {
   padding: 0 20px;
 }
 
-.header {
-  padding: 20px 0;
-}
-
 .navbar {
   background-color: #f4f4f4;
   padding: 10px 0;
@@ -103,7 +103,8 @@ a {
   background-color: #0056b3;
 }
 
-.container{
-  width:90%;
+.container {
+  width: 90%;
   margin: 0 auto;
+  margin-top: 90px;
 }

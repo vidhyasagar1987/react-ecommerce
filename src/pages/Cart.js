@@ -1,9 +1,10 @@
 import React from "react";
 import Layout from "../utils/Layout";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CART_EMPTY } from "../utils/Constants";
 import CartList from "../components/Cart/CartList";
 import { useNavigate } from "react-router-dom";
+import { clearCart } from "../Slices/CartSlice";
 
 const Cart = () => {
   const { cart, totalAmount } = useSelector((state) => state.cart);
@@ -15,6 +16,9 @@ const Cart = () => {
   const checkout = () => {
     navigate("/checkout");
   };
+
+  const dispatch = useDispatch();
+
   return (
     <Layout>
       <div className="container">
@@ -30,10 +34,13 @@ const Cart = () => {
           <span>{totalAmount.toFixed(2)}</span>
         </div>
         {cart?.length > 0 && (
-          <div>
-            <button onClick={backToProducts}>Cancel</button>
-            <button onClick={checkout}>Order</button>
-          </div>
+          <>
+            <div>
+              <button onClick={backToProducts}>Cancel</button>
+              <button onClick={checkout}>Order</button>
+            </div>
+            <button onClick={() => dispatch(clearCart())}>Clear Cart</button>
+          </>
         )}
       </div>
     </Layout>

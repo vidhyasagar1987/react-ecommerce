@@ -2,12 +2,12 @@ import React from "react";
 import "../assets/css/defaults.css";
 
 import Footer from "../components/Footer/Footer";
-import TopHeader from "../components/header/TopHeader";
+import TopHeader from "../components/Header/TopHeader"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <TopHeader />
+     <TopHeader/>
       {children}
       <Footer />
     </>
