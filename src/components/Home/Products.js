@@ -16,8 +16,8 @@ const Products = () => {
   return (
     <section className="latest">
       <div className="container">
-        <h2>{LATEST_PRODUCTS}</h2>
-        <Grid container spacing={2}>
+        <h2 className="section-heading">{LATEST_PRODUCTS}</h2>
+        <div className="wrapper">
           {error
             ? error
             : productsLoading
@@ -27,7 +27,7 @@ const Products = () => {
                 .filter((p) => p.category === "men's clothing")
                 .map((p) => <ProductList key={p.id} product={p} />)
             : "No Products Found"}
-        </Grid>
+        </div>
       </div>
     </section>
   );

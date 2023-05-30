@@ -4,20 +4,12 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 html {
   scroll-behavior: smooth;
   height: auto;
   min-height: 100%;
-}
-
-:root {
-  --primary-color: #A569C3;
-  --secondary-color: #B3A7B8;
-  --text-color: #4D4351;
-  --button-color: #3A0159;
-  --button2-color: #006357;
-  /* Add more color variables as needed */
 }
 
 body,
@@ -67,6 +59,7 @@ body {
   font-family: "Poppins", sans-serif;
   height: 100%;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1,
@@ -127,7 +120,6 @@ a {
 .container {
   width: 90%;
   margin: 0 auto;
-  margin-top: 90px;
 }
 
 .button {
@@ -168,4 +160,32 @@ a {
     rgba(99, 88, 238, 1) 94.3%
   );
   transition: all 0.475s;
+}
+
+.section-heading {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  line-height: 36px; 
+  color: var(--button-color);
+}
+.section-heading:before {
+  background-color: var(--button-color);
+  content: "";
+  height: 2px;
+  left: -100px;
+  position: absolute;
+  top: 17px;
+  width: 80px;
+}
+.section-heading:after {
+  background-color: var(--button-color);
+  content: "";
+  height: 2px;
+  position: absolute;
+  right: -100px;
+  top: 17px;
+  width: 80px;
 }

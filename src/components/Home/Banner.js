@@ -5,17 +5,17 @@ import {
   BANNER_HEADING,
   SHOP_NOW,
 } from "../../utils/Constants";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <section className="banner">
-      {/* <img src="path/to/your/banner-image.jpg" alt="Banner" /> */}
       <div className="banner-content">
         <h2>{BANNER_CONTENT}</h2>
         <p>{BANNER_HEADING}</p>
 
-        <button className="button">
-          <span className="button-content">{SHOP_NOW} </span>
-        </button>
+        <Link to={"/products"}>    <button className="button">
+        <span className="button-content">{SHOP_NOW} </span>
+        </button></Link>
       </div>
     </section>
   );

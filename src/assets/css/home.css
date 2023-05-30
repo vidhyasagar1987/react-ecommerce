@@ -1,4 +1,4 @@
-@import url(../css/defaults.css);
+@import url(../css/color.css);
 
 .banner {
   width: 100%;
@@ -27,119 +27,77 @@
 
 .latest {
   padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
 }
-.latest h2 {
-  padding-bottom: 20px;
+
+.wrapper {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
 }
 
 .card {
-  position: relative;
-  width: 320px;
-  height: 480px;
-  background: #191919;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  width: 100%;
-  height: 100%;
-  background: #ffce00;
-  transform: skewY(345deg);
-  transition: 0.5s;
-}
-
-.card:hover::before {
-  top: -70%;
-  transform: skewY(390deg);
-}
-
-.card::after {
-  content: "CORSAIR";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-weight: 600;
-  font-size: 6em;
-  color: rgba(0, 0, 0, 0.1);
-}
-
-.card .imgBox {
-  position: relative;
-  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  z-index: 1;
-}
-.card .imgBox {
-  mix-blend-mode: color-burn;
-}
-/*
-.card .imgBox img {
-    max-width: 100%;
-    
-    transition: .5s;
-}
-
-.card:hover .imgBox img {
-    max-width: 50%;
-      
-}
-*/
-.card .contentBox {
-  position: relative;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  z-index: 2;
+  border: 1px solid var(--secondary-color);
+ 
+  border-radius: 5px 5px 0 0 ;
+}
+
+.card .imgBox {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 250px;
+ 
+}
+
+.card .imgBox img {
+  height: 80%;
+  transition: .3s ease;
+}
+
+.card .imgBox img:hover {
+  height: 85%;
+  transition: .3s ease;
+}
+
+.card .contentBox {
+  width: 90%;
+  height: 120px;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ padding: 5%;
+ 
 }
 
 .card .contentBox h3 {
-  font-size: 18px;
-  color: white;
+  font-size: 17px;
+  color: var(--text-color);
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+ 
 }
 
 .card .contentBox .price {
-  font-size: 24px;
-  color: white;
+  font-size: 20px;
+  color: var(--text-color);
   font-weight: 700;
   letter-spacing: 1px;
+  margin-bottom: 5px;
 }
 
-.card .contentBox .buy {
-  position: relative;
-  top: 100px;
-  opacity: 0;
-  padding: 10px 30px;
-  margin-top: 15px;
-  color: #000000;
-  text-decoration: none;
-  background: #ffce00;
-  border-radius: 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: 0.5s;
-}
-
-.card:hover .contentBox .buy {
-  top: 0;
-  opacity: 1;
-}
-
-.mouse {
-  height: 280px;
-  width: auto;
-}
 
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -159,7 +117,7 @@
     text-align: center;
     justify-content: center;
     height: 70vh;
-padding-top: 80px;
+    padding-top: 80px;
     background-image: linear-gradient(to bottom, #dfdefe, #b4aff1);
   }
 

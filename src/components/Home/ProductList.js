@@ -8,11 +8,11 @@ const ProductList = ({ product }) => {
       </div>
 
       <div className="contentBox">
-        <h3>{product.title}</h3>
+        <h3>{product.title.slice(0, 5)}</h3>
         <h2 className="price">{product.price} €</h2>
-        <a href="#" className="buy">
-          Buy Now
-        </a>
+        <button className="button">
+          <span className="button-content"> Buy Now</span>
+        </button>
       </div>
     </div>
   );
