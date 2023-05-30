@@ -13,6 +13,8 @@ const TopHeader = () => {
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
+    toggleBodyScrollLock();
+
   };
   const { cart } = useSelector((state) => state.cart);
 
@@ -35,6 +37,11 @@ const TopHeader = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const toggleBodyScrollLock = () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('body-scroll-lock');
+  };
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
@@ -80,7 +87,7 @@ const TopHeader = () => {
             </li>
             <li className="mobile-menu">
               <button onClick={handleMenuToggle}>
-                {menuOpen ? <AiOutlineCloseSquare /> : <BiMenu />}
+                {menuOpen ? <AiOutlineCloseSquare className={`${menuOpen ? "close" : ""}`}/> : <BiMenu />}
               </button>
             </li>
           </ul>

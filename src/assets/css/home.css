@@ -1,28 +1,36 @@
+@import url(../css/defaults.css);
+
 .banner {
   width: 100%;
-  background-color: bisque;
-  justify-content: center;
+  background: url(../images/bg.jpg) no-repeat center center;
+  background-size: cover;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
-  height: 80vh;
+  height: 90vh;
   position: relative;
-  text-align: center;
 }
 
+.banner-content {
+  width: 100%;
+  padding: 0 80px;
+}
 .banner-content h2 {
-  font-size: 24px;
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
 .banner-content p {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
-.latest{
+.latest {
   padding: 80px 0;
 }
-.latest h2{ padding-bottom: 20px;}
+.latest h2 {
+  padding-bottom: 20px;
+}
 
 .card {
   position: relative;
@@ -68,8 +76,8 @@
   padding-top: 20px;
   z-index: 1;
 }
-.card .imgBox{
-mix-blend-mode: color-burn;
+.card .imgBox {
+  mix-blend-mode: color-burn;
 }
 /*
 .card .imgBox img {
@@ -133,3 +141,37 @@ mix-blend-mode: color-burn;
   width: auto;
 }
 
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner-content {
+    padding: 0 20px;
+  }
+  .banner-content h2 {
+    font-size: 30px;
+  }
+
+  .banner-content p {
+    font-size: 17px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .banner {
+    text-align: center;
+    justify-content: center;
+    height: 70vh;
+padding-top: 80px;
+    background-image: linear-gradient(to bottom, #dfdefe, #b4aff1);
+  }
+
+  .banner-content {
+    padding: 0 20px;
+  }
+  .banner-content h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
+  }
+}
