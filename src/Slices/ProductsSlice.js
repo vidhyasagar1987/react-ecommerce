@@ -20,8 +20,34 @@ export const productSlice = createSlice({
     productsLoading: true,
     error: null,
     status: "idle",
+    productsCategory: [],
+    filterProducts: []
   },
-  reducers: {},
+  reducers: {
+    productFilter:(state, action) => {
+      const { minPrice, maxPrice, category } = action.payload;
+
+      if (minPrice && maxPrice) {
+        // Filter by price range
+        state.filterProducts = state.products.filter(
+          (product) =>
+            product.price >= minPrice &&
+            product.price <= maxPrice &&
+            (!category || product.category === category) // Include category filter if selected
+        );
+      } else if (category) {
+        // Filter by category only
+        state.filterProducts = state.products.filter(
+          (product) => product.category === category
+        );
+      } else {
+        // No filters selected, display all products
+        state.filterProducts = state.products;
+      }
+
+     
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getProducts.pending, (state, action) => {
@@ -31,6 +57,8 @@ export const productSlice = createSlice({
       .addCase(getProducts.fulfilled, (state, action) => {
         state.productsLoading = false;
         state.products = action.payload;
+        state.productsCategory = action.payload
+        state.filterProducts =  action.payload
       })
       .addCase(getProducts.rejected, (state, action) => {
         state.status = "error";
@@ -40,6 +68,6 @@ export const productSlice = createSlice({
   },
 });
 
-export const {} = productSlice.actions;
+export const {productFilter} = productSlice.actions;
 
 export default productSlice.reducer;

@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../Slices/ProductsSlice";
 import { LATEST_PRODUCTS } from "../../utils/Constants";
-
-import { Grid } from "@mui/material";
 import ProductList from "./ProductList";
+import Loaders from "../../utils/Loaders";
+import CartToast from "../../utils/CartToast";
+
 const Products = () => {
   const dispatch = useDispatch();
   const { products, error, productsLoading } = useSelector(
@@ -21,7 +22,7 @@ const Products = () => {
           {error
             ? error
             : productsLoading
-            ? "Loading"
+            ? <Loaders/>
             : products && products.length > 0
             ? products
                 .filter((p) => p.category === "men's clothing")
@@ -29,6 +30,7 @@ const Products = () => {
             : "No Products Found"}
         </div>
       </div>
+     <CartToast/>
     </section>
   );
 };

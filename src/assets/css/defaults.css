@@ -4,7 +4,6 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
 html {
   scroll-behavior: smooth;
@@ -38,13 +37,13 @@ ul {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px #f1f1f1;
+  box-shadow: inset 0 0 5px var(--button-color);
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #d9d9d9;
+  background: var(--primary-color);
   border-radius: 100px;
 }
 
@@ -168,7 +167,7 @@ a {
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
-  line-height: 36px; 
+  line-height: 36px;
   color: var(--button-color);
 }
 .section-heading:before {
@@ -188,4 +187,94 @@ a {
   right: -100px;
   top: 17px;
   width: 80px;
+}
+
+.common-banner {
+  width: 100%;
+  background-image: linear-gradient(to bottom, #dfdefe, #b4aff1);
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  height: 25vh;
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.common-banner-content {
+  width: 100%;
+  padding: 0 80px;
+}
+
+.common-banner-content h2 {
+  padding-top: 60px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.common-banner-content p {
+  font-size: 12px;
+}
+
+.custom-slider {
+  margin-top: 18px;
+
+  .rs-slider-handle {
+    top: -6px;
+    background-color: #3498ff;
+    text-align: center;
+    padding: 3px;
+    margin-left: -16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 0 8px rgb(52 152 255 / 25%);
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &.rs-slider-dragging .rs-slider-handle,
+  &.rs-slider-dragging .rs-slider-handle:hover {
+    box-shadow: none;
+    transform: scale(1.2);
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .section-heading {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-heading {
+    font-size: 22px;
+  }
+  .section-heading:before {
+    left: -50px;
+    width: 40px;
+  }
+  .section-heading:after {
+    right: -50px;
+    width: 40px;
+  }
+
+  .common-banner-content {
+    padding: 0 20px;
+  }
+
+  .common-banner-content h2 {
+    padding-top: 50px;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .common-banner-content p {
+    font-size: 11px;
+  }
 }

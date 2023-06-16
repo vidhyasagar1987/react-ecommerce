@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useReducer, useState } from "react";
-import Plist from "./Plist";
 
 const Learning = () => {
   const currentState = {
@@ -82,13 +81,7 @@ const Learning = () => {
       >
         Add Count By 5
       </button>
-      {products.map((p) => (
-        <Plist
-          key={p.id}
-          title={p.title}
-          useCallbackHandler={useCallbackHandler}
-        />
-      ))}
+     
     </div>
   );
 };

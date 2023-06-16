@@ -1,11 +1,11 @@
 import React from "react";
-import Button from "../../utils/Button";
 import {
   BANNER_CONTENT,
   BANNER_HEADING,
   SHOP_NOW,
 } from "../../utils/Constants";
 import { Link } from "react-router-dom";
+import ButtonStyle from "../../utils/ButtonStyle";
 const Banner = () => {
   return (
     <section className="banner">
@@ -13,9 +13,9 @@ const Banner = () => {
         <h2>{BANNER_CONTENT}</h2>
         <p>{BANNER_HEADING}</p>
 
-        <Link to={"/products"}>    <button className="button">
-        <span className="button-content">{SHOP_NOW} </span>
-        </button></Link>
+        <Link to={"/products"}>
+          <ButtonStyle>{SHOP_NOW} </ButtonStyle>
+        </Link>
       </div>
     </section>
   );
